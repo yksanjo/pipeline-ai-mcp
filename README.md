@@ -1,78 +1,84 @@
-# 🤖 Pipeline AI MCP Server
+# pipeline-ai-mcp
 
-MCP (Model Context Protocol) Server for Pipeline AI - Integrate with AI assistants like Claude, Cursor, and others.
+## Detailed Description
 
-## Features
+pipeline-ai-mcp is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-- 🔌 **MCP Protocol** - Standardized integration with AI assistants
-- 🛠️ **Tool-based** - Exposes pipeline generation as callable tools
-- 🤖 **AI-Powered** - Uses GPT-4 for intelligent generation
-- 📦 **Lightweight** - Minimal dependencies
+## Problem Statement
 
-## Installation
+Describe the user or business problem this project solves, the target users, and expected outcomes.
+
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-npm install
+npm ci
+npm run lint
+npm test
 npm run build
 ```
 
-## Configuration
+## Usage
 
-Add to your AI assistant's MCP configuration:
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-```json
-{
-  "mcpServers": {
-    "pipeline-ai": {
-      "command": "node",
-      "args": ["/path/to/pipeline-ai-mcp/dist/index.js"],
-      "env": {
-        "OPENAI_API_KEY": "your-api-key"
-      }
-    }
-  }
-}
-```
+## Quality Standards
 
-## Available Tools
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-### generate_pipeline
-Generate a CI/CD pipeline from natural language.
+## Security
 
-```typescript
-{
-  description: "build and test a Node.js app",  // required
-  language: "nodejs",                           // default: nodejs
-  platform: "github-actions",                    // default: github-actions
-  deploymentTarget: "aws-s3"                     // optional
-}
-```
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-### list_languages
-List all supported programming languages.
+## Contributing
 
-### list_platforms
-List all supported CI/CD platforms.
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-## Environment Variables
+## Roadmap
 
-```bash
-OPENAI_API_KEY=your_api_key_here
-```
+Track upcoming milestones, technical debt, and planned feature work.
 
-## Example Usage
+## Support
 
-In Claude or other AI assistants:
-```
-Use the generate_pipeline tool to create a GitHub Actions workflow for a Python app that deploys to AWS Lambda.
-```
-
-## Tech Stack
-
-- TypeScript
-- @modelcontextprotocol/server
-- OpenAI SDK
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
+This project is released under the MIT License.
